@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise E-commerce Dashboard</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-chart-line"></i>
+                <span>EcommercePro</span>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#dashboard" class="nav-link active">Dashboard</a></li>
+                    <li><a href="#products" class="nav-link">Products</a></li>
+                    <li><a href="#orders" class="nav-link">Orders</a></li>
+                    <li><a href="#customers" class="nav-link">Customers</a></li>
+                    <li><a href="#analytics" class="nav-link">Analytics</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <img src="https://via.placeholder.com/40" alt="User" class="profile-img">
+                <span class="username">Admin User</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-content">
+            <div class="sidebar-section">
+                <h3>Quick Actions</h3>
+                <ul class="sidebar-menu">
+                    <li><a href="#"><i class="fas fa-plus"></i> Add Product</a></li>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i> New Order</a></li>
+                    <li><a href="#"><i class="fas fa-user-plus"></i> Add Customer</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Dashboard Overview -->
+        <section id="dashboard" class="content-section active">
+            <div class="section-header">
+                <h1>Dashboard Overview</h1>
+                <div class="date-filter">
+                    <select id="dateRange">
+                        <option value="today">Today</option>
+                        <option value="week">This Week</option>
+                        <option value="month" selected>This Month</option>
+                        <option value="year">This Year</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- KPI Cards -->
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="kpi-content">
+                        <h3>Total Revenue</h3>
+                        <p class="kpi-value">$124,567</p>
+                        <span class="kpi-change positive">+12.5%</span>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="kpi-content">
+                        <h3>Total Orders</h3>
+                        <p class="kpi-value">1,234</p>
+                        <span class="kpi-change positive">+8.2%</span>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="kpi-content">
+                        <h3>Active Customers</h3>
+                        <p class="kpi-value">5,678</p>
+                        <span class="kpi-change positive">+15.3%</span>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="kpi-content">
+                        <h3>Products Sold</h3>
+                        <p class="kpi-value">2,456</p>
+                        <span class="kpi-change negative">-2.1%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <h3>Sales Trend</h3>
+                    <canvas id="salesChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Top Products</h3>
+                    <div class="product-list">
+                        <div class="product-item">
+                            <img src="https://via.placeholder.com/50" alt="Product">
+                            <div class="product-info">
+                                <h4>Wireless Headphones</h4>
+                                <p>$299.99 • 156 sold</p>
+                            </div>
+                            <div class="product-sales">$46,798</div>
+                        </div>
+                        <div class="product-item">
+                            <img src="https://via.placeholder.com/50" alt="Product">
+                            <div class="product-info">
+                                <h4>Smart Watch</h4>
+                                <p>$399.99 • 124 sold</p>
+                            </div>
+                            <div class="product-sales">$49,599</div>
+                        </div>
+                        <div class="product-item">
+                            <img src="https://via.placeholder.com/50" alt="Product">
+                            <div class="product-info">
+                                <h4>Laptop Stand</h4>
+                                <p>$79.99 • 89 sold</p>
+                            </div>
+                            <div class="product-sales">$7,119</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Orders Table -->
+            <div class="table-container">
+                <div class="table-header">
+                    <h3>Recent Orders</h3>
+                    <button class="btn btn-primary">View All Orders</button>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Product</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersTableBody">
+                        <!-- Dynamic content will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-spinner hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/charts.js"></script>
+</body>
+</html>
